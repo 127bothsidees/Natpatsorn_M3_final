@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>My Favorite Hobby</title>
+<link href="styles.css" rel="stylesheet" type="text/css">
+<script src="script.js" defer></script>
+</head>
+
+<body>
+	<nav class="navbar">
+		<div class="nav-brand">My Favorite Hobby</div>
+		<ul class="nav-links">
+			<li class="nav-home"><a href="index.html">Home</a></li>
+			<li class="nav-reading"><a href="hobby1.html">Reading Books</a></li>
+			<li class="nav-watching"><a href="hobby2.html">Watching Series</a></li>
+			<li class="nav-games"><a href="hobby3.html">Playing Games</a></li>
+            <li class="nav-minigame"><a href="#minigame-section">Minigame</a></li>
+		</ul>
+	</nav>
+
+	<header class="hero-slider">
+		<div class="slides-wrapper">
+			<img src="mainheaderr.png" alt="Slide 1" class="slide active">
+			<img src="idrb.jpg" alt="Slide 2" class="slide">
+			<img src="srwdd.jpg" alt="Slide 3" class="slide">
+			<img src="ihgm.avif" alt="Slide 4" class="slide">
+		</div>
+		<button class="slide-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+		<button class="slide-btn next" onclick="moveSlide(1)">&#10095;</button>
+	</header>
+	
+	<main>
+	<section>
+		<div>
+			<div class="aboutme-text">
+				<h2 class="aboutme">Brief Info About Me!</h2>
+				Hello! My name is Natpatsorn Chokchawanpantawee. I’m currently studying at TUP school, grade 9. On this website, I’d like to share the hobbies I enjoy in my free time. Which are reading books, watching series, and playing games. For me, hobbies are more than just a pastime; they help me feel calm and happy after a long day of studying. They let me relax and unwind, and sometimes they even become a source of new knowledge. That’s why I truly enjoy pursuing my hobbies. If you’re curious, feel free to explore them on this website!
+				<div class="abm">
+					<img src="index-bk.jpg" alt="index-bk">
+					<img src="index-sr.jpg" alt="index-sr">
+					<img src="index-gm.jpg" alt="index-gm">
+				</div>
+			</div>
+		</div>
+        
+		<div class="mhb">
+			<h2 class="my-hobby">My Hobbies</h2>
+			<div class="hobbies-list">
+				<div class="hobby-card1">
+					<a href="hobby1.html" class="hobby-icon hobby-link">Reading Books</a>
+					<h3>My most favorite hobby now is reading books</h3>
+					<p>Reading books is my favourite hobby because it lets me drift away from stress and dive into new worlds. It calms me after a busy day and gives my mind a healthy workout — sharpening memory and focus. More than entertainment, it’s my way to reset and grow mentally.</p>
+				</div>
+				<div class="hobby-card2">
+
+					<a href="hobby2.html" class="hobby-icon hobby-link">Watching Series</a>
+					<h3>Now, I really like to watch C-Drama</h3>
+					<p>Watching series helps me relax and unwind after study or work. I enjoy all kinds, but lately Chinese dramas catch my heart with their stories and atmosphere. It’s not just fun — it’s a nice break that recharges me and gives me peaceful downtime.</p>
+				</div>
+				<div class="hobby-card3">
+					<a href="hobby3.html" class="hobby-icon hobby-link">Playing Games</a>
+					<h3>My favorite type of game is cozy games</h3>
+					<p>Playing games is how I de-stress and refresh my mind. I love games like Potion Craft because it let me explore, create and challenge myself — all in a fun way. For me, gaming isn’t just play; it’s a way to feel motivated, think sharply, and enjoy a break from everyday routine.</p>
+				</div>
+			</div>
+		</div>
+		</section>
+		
+		<section id="minigame-section" class="reveal-hidden">
+    <div class="minigame-container">
+        <h2 class="minigame-title">Mini-Game</h2>
+        
+        <div id="start-screen" style="padding: 100px 0;">
+            <button id="start-btn" class="game-btn" onclick="startGame()">Start</button>
+        </div>
+
+        <div id="game-content" style="display: none;">
+            <p>Let's take a quick break and play a round of rock, paper, scissors!</p>
+            
+            <div class="scoreboard">
+                <div class="score-box">
+                    <span>You</span>
+                    <span id="player-score" aria-live="polite">0</span>
+                </div>
+                <div class="score-box">
+                    <span>Me</span>
+                    <span id="comp-score" aria-live="polite">0</span>
+                </div>
+            </div>
+
+            <div class="game-feedback" id="game-message" aria-live="assertive">Choose your move to start!</div>
+
+            <div class="game-controls">
+                <button class="game-btn" onclick="playTurn('rock')">Rock</button>
+                <button class="game-btn" onclick="playTurn('paper')">Paper</button>
+                <button class="game-btn" onclick="playTurn('scissors')">Scissors</button>
+            </div>
+
+            <button class="reset-btn" onclick="resetGame()">Reset Game</button>
+		</div>
+			</div>
+		</section>
+	</main>
+	
+	<footer class="footer">My Favorite Hobby - Reading, Watching sereies, Playing games</footer>
+</body>
+</html>
