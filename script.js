@@ -58,6 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
         '.reading-book', '.fav-book', '.e-book', '.read-song',
         '.watching-series', '.into-sr', '.c-recommend',
         '.play-game-text', '.game-exp', '.fav-game-text',
+		'#share-hobby-section',
 		'#minigame-section' 
     ];
 
@@ -110,20 +111,19 @@ function playTurn(playerChoice) {
     let scoreColor = ""; 
 
     if (maxScore > 49) {
-        scoreColor = "darkgreen";
+        scoreColor = "#232b2b";
         if (!hasReached50) {
             alert("Wow, you've played this game for so long. Incredible!");
             hasReached50 = true;
         }
     } else if (maxScore > 20) {
-        scoreColor = "indigo"; 
+        scoreColor = "#461257"; 
     } else if (maxScore > 10) {
-        scoreColor = "navy";
+        scoreColor = "#14123b";
     }
 
     document.getElementById('player-score').style.color = scoreColor;
     document.getElementById('comp-score').style.color = scoreColor;
-    // ---------------------------------
 
     const feedbackEl = document.getElementById('game-message');
     feedbackEl.innerText = resultMessage;

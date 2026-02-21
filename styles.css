@@ -319,7 +319,7 @@ main {
 }
 .my-hobby {
 	margin-top: 0;
-	border-bottom: 3px solid #6D6D6D;
+	border-bottom: 2px solid #6D6D6D;
 	padding-bottom: 12px;
 	margin-bottom: 20px;
 	font-size: 2rem;
@@ -593,7 +593,7 @@ tr:hover {
 }
 .minigame-title {
     margin-top: 0;
-    border-bottom: 3px solid #6D6D6D;
+    border-bottom: 2px solid #6D6D6D;
     padding-bottom: 12px;
     margin-bottom: 20px;
     font-size: 2rem;
@@ -690,6 +690,87 @@ tr:hover {
 
 .reveal-animate {
     animation: slideUpFade 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+#share-hobby-section {
+    margin-top: 40px;
+}
+
+.share-hobby-card {
+    background-color: #ffffff; 
+    border-radius: 20px;
+    border: 1px solid rgba(0,0,0,0.1);
+    padding: 35px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    margin-bottom: 2rem; 
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.share-hobby-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+.form-title {
+    margin-top: 0;
+    border-bottom: 2px solid #6D6D6D;
+    padding-bottom: 12px;
+    margin-bottom: 10px;
+    font-size: 2rem;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.hobby-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px; 
+    margin: 0 auto; 
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+}
+.form-group textarea {
+    resize: none;
+	min-height: 150px;
+}
+.form-group label {
+    font-weight: bold;
+    color: #462709;
+}
+
+.form-group input, .form-group textarea {
+    padding: 12px 15px;
+    border: 2px solid #EBEBEB;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: #F8F8F4;
+    color: #333;
+    transition: border-color 0.3s, outline 0.3s;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: #78653D;
+}
+
+.hobby-form .game-btn {
+    align-self: center;
+    margin-top: 10px;
+    width: fit-content;
+}
+
+.hobby-form .game-btn:hover, 
+.hobby-form .game-btn:focus {
+    outline: none;
 }
 
 @keyframes slideUpFade {
