@@ -73,6 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 let playerScore = 0;
 let compScore = 0;
+let hasReached50 = false;
 
 function playTurn(playerChoice) {
     const choices = ['rock', 'paper', 'scissors'];
@@ -81,7 +82,6 @@ function playTurn(playerChoice) {
     let resultMessage = "";
     let msgColor = "";
     let bgColor = "";
-
 
     if (playerChoice === compChoice) {
         resultMessage = `It's a tie! Both chose ${playerChoice}.`;
@@ -103,35 +103,55 @@ function playTurn(playerChoice) {
         bgColor = "#f8d7da";  
     }
 
-
     document.getElementById('player-score').innerText = playerScore;
     document.getElementById('comp-score').innerText = compScore;
     
+    let maxScore = Math.max(playerScore, compScore);
+    let scoreColor = ""; 
+
+    if (maxScore > 49) {
+        scoreColor = "darkgreen";
+        if (!hasReached50) {
+            alert("Wow, you've played this game for so long. Incredible!");
+            hasReached50 = true;
+        }
+    } else if (maxScore > 20) {
+        scoreColor = "indigo"; 
+    } else if (maxScore > 10) {
+        scoreColor = "navy";
+    }
+
+    document.getElementById('player-score').style.color = scoreColor;
+    document.getElementById('comp-score').style.color = scoreColor;
+    // ---------------------------------
+
     const feedbackEl = document.getElementById('game-message');
     feedbackEl.innerText = resultMessage;
     feedbackEl.style.color = msgColor;
     feedbackEl.style.backgroundColor = bgColor;
 }
-
 function startGame() {
     document.getElementById('start-screen').style.display = 'none';
     document.getElementById('game-content').style.display = 'block';
 }
 
 function resetGame() {
-    // Reset scores
+
     playerScore = 0;
     compScore = 0;
+    hasReached50 = false; 
+    
     document.getElementById('player-score').innerText = playerScore;
     document.getElementById('comp-score').innerText = compScore;
     
-    // Reset feedback message
+    document.getElementById('player-score').style.color = "";
+    document.getElementById('comp-score').style.color = "";
+    
     const feedbackEl = document.getElementById('game-message');
     feedbackEl.innerText = "Game reset. Choose your move to start!";
     feedbackEl.style.color = "#462709";
     feedbackEl.style.backgroundColor = "transparent";
 
-    // Hide the game content and show the Start screen again
     document.getElementById('game-content').style.display = 'none';
     document.getElementById('start-screen').style.display = 'block';
 }
